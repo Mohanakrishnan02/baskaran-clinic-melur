@@ -5,13 +5,13 @@ import {
   Activity,
   Baby,
   Cross,
-  MessageCircle,
+  Phone,
   Stethoscope,
   Syringe,
   Thermometer,
   type LucideIcon,
 } from "lucide-react";
-import { whatsappUrl } from "@/lib/clinic";
+import { TEL_HREF } from "@/lib/clinic";
 
 interface ServiceItem {
   title: string;
@@ -70,17 +70,13 @@ export default function Services() {
             Services patients already trust us for
           </h2>
           <p className="mt-3 text-slate-600">
-            The care Melur likes — inquire on WhatsApp with your need
-            pre-filled.
+            The care Melur likes — call the clinic to inquire about any service.
           </p>
         </div>
 
         <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((service, index) => {
             const Icon = service.icon;
-            const inquireUrl = whatsappUrl(
-              `Hello Baskaran Clinic, I would like to inquire about: ${service.title}`
-            );
 
             return (
               <motion.article
@@ -102,13 +98,11 @@ export default function Services() {
                   {service.description}
                 </p>
                 <a
-                  href={inquireUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={TEL_HREF}
                   className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 transition hover:text-emerald-600"
                 >
-                  <MessageCircle className="h-4 w-4" aria-hidden />
-                  Inquire on WhatsApp
+                  <Phone className="h-4 w-4" aria-hidden />
+                  Call to inquire
                 </a>
               </motion.article>
             );

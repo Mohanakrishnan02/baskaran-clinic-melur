@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { MessageCircle, Phone } from "lucide-react";
-import { CLINIC, TEL_HREF, WHATSAPP_BOOK } from "@/lib/clinic";
+import { CalendarClock, Phone } from "lucide-react";
+import { CLINIC, TEL_HREF } from "@/lib/clinic";
 
 export default function Hero() {
   return (
@@ -67,20 +67,18 @@ export default function Hero() {
           className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
         >
           <a
-            href={WHATSAPP_BOOK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-emerald-500"
-          >
-            <MessageCircle className="h-5 w-5" aria-hidden />
-            Book via WhatsApp
-          </a>
-          <a
             href={TEL_HREF}
-            className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-emerald-500"
           >
             <Phone className="h-5 w-5" aria-hidden />
             Call {CLINIC.phoneLocal}
+          </a>
+          <a
+            href="#timings"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
+          >
+            <CalendarClock className="h-5 w-5" aria-hidden />
+            Book appointment
           </a>
         </motion.div>
       </div>

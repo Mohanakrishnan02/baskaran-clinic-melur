@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
-import { WHATSAPP_BOOK } from "@/lib/clinic";
+import { Phone } from "lucide-react";
+import { TEL_HREF } from "@/lib/clinic";
 
 export default function DoctorProfile() {
   return (
@@ -72,17 +72,15 @@ export default function DoctorProfile() {
             <ul className="mt-8 space-y-3 border-l-2 border-teal-600/40 pl-5 text-sm text-slate-700">
               <li>Patients like the personal, attentive visits</li>
               <li>Recommended across Melur by word of mouth</li>
-              <li>Easy WhatsApp booking for busy local families</li>
+              <li>Easy phone booking for busy Melur families</li>
             </ul>
 
             <a
-              href={WHATSAPP_BOOK}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={TEL_HREF}
               className="mt-8 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-500"
             >
-              <MessageCircle className="h-4 w-4" aria-hidden />
-              Message the clinic
+              <Phone className="h-4 w-4" aria-hidden />
+              Call the clinic
             </a>
           </motion.div>
         </div>

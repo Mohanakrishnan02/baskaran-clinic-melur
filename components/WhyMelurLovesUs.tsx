@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart, MessageCircle, ThumbsUp } from "lucide-react";
-import { WHATSAPP_BOOK } from "@/lib/clinic";
+import { Heart, Phone, ThumbsUp } from "lucide-react";
+import { TEL_HREF } from "@/lib/clinic";
 
 const REASONS = [
   {
@@ -16,7 +16,7 @@ const REASONS = [
     text: "Neighbours recommend neighbours — our reputation in Melur is built by people who keep coming back.",
   },
   {
-    icon: MessageCircle,
+    icon: Phone,
     title: "Care that feels personal",
     text: "Not a crowded city hospital. Clear advice, familiar faces, and attention Melur patients appreciate.",
   },
@@ -98,13 +98,11 @@ export default function WhyMelurLovesUs() {
             most.
           </p>
           <a
-            href={WHATSAPP_BOOK}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={TEL_HREF}
             className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-teal-900 transition hover:bg-teal-50"
           >
-            <MessageCircle className="h-4 w-4" aria-hidden />
-            Book the clinic Melur prefers
+            <Phone className="h-4 w-4" aria-hidden />
+            Call the clinic Melur prefers
           </a>
         </motion.div>
       </div>

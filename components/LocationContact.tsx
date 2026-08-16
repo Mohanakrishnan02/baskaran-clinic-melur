@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPinned, MessageCircle, Navigation, Phone } from "lucide-react";
-import { CLINIC, TEL_HREF, WHATSAPP_BOOK } from "@/lib/clinic";
+import { CalendarClock, MapPinned, Navigation, Phone } from "lucide-react";
+import { CLINIC, TEL_HREF } from "@/lib/clinic";
 
 export default function LocationContact() {
   return (
@@ -46,16 +46,15 @@ export default function LocationContact() {
               value={CLINIC.phoneDisplay}
               href={TEL_HREF}
               action="Call Now"
-              tone="navy"
+              tone="emerald"
             />
             <QuickLink
-              icon={MessageCircle}
-              label="WhatsApp"
-              value="Book or inquire instantly"
-              href={WHATSAPP_BOOK}
-              action="Chat on WhatsApp"
-              tone="emerald"
-              external
+              icon={CalendarClock}
+              label="Appointments"
+              value="Call during OP hours to book"
+              href="#timings"
+              action="View Timings"
+              tone="navy"
             />
             <QuickLink
               icon={Navigation}

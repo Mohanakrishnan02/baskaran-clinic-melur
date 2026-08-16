@@ -1,4 +1,4 @@
-import { CLINIC, TEL_HREF, WHATSAPP_BOOK } from "@/lib/clinic";
+import { CLINIC, TEL_HREF } from "@/lib/clinic";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -57,17 +57,12 @@ export default function Footer() {
           <ul className="mt-3 space-y-2 text-sm">
             <li>
               <a href={TEL_HREF} className="hover:text-white">
-                {CLINIC.phoneDisplay}
+                Call {CLINIC.phoneDisplay}
               </a>
             </li>
             <li>
-              <a
-                href={WHATSAPP_BOOK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white"
-              >
-                WhatsApp Booking
+              <a href="#timings" className="hover:text-white">
+                Appointment timings
               </a>
             </li>
           </ul>

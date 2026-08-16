@@ -8,7 +8,6 @@ export const CLINIC = {
   phoneDisplay: "+91 80988 59590",
   phoneLocal: "080988 59590",
   phoneTel: "+918098859590",
-  whatsappNumber: "918098859590",
   mapsQuery: "280 Alagar Kovil Road Melur Madurai 625106",
   mapsEmbedUrl:
     "https://www.google.com/maps?q=280+Alagar+Kovil+Road,+Melur,+Madurai,+Tamil+Nadu+625106&output=embed",
@@ -22,16 +21,10 @@ export const TIMINGS = {
   sunday: "Morning Session / By Prior Appointment",
 } as const;
 
-export function whatsappUrl(message: string): string {
-  return `https://wa.me/${CLINIC.whatsappNumber}?text=${encodeURIComponent(message)}`;
-}
-
-export const WHATSAPP_DEFAULT = whatsappUrl(
-  "Hello Baskaran Clinic, I want to book an appointment"
-);
-
-export const WHATSAPP_BOOK = whatsappUrl(
-  "Hello Baskaran Clinic, I want to book an appointment"
-);
-
+/** Phone call — this number is not on WhatsApp */
 export const TEL_HREF = `tel:${CLINIC.phoneTel}`;
+
+/** Native SMS (not WhatsApp) for appointment details on mobile */
+export function smsUrl(message: string): string {
+  return `sms:${CLINIC.phoneTel}?body=${encodeURIComponent(message)}`;
+}

@@ -35,4 +35,5 @@ npx vercel --prod
 ```
 
 ## Contact wiring
-All Call / WhatsApp CTAs use **+91 80988 59590** (`tel:+918098859590` / `wa.me/918098859590`).
+All booking CTAs use **Call** `tel:+918098859590` (+91 80988 59590).  
+This number is **not on WhatsApp** — appointment form uses native **SMS** instead.

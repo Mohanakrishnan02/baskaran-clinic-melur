@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Baskaran Clinic",
   },
   description:
-    "Baskaran Clinic — the famous local clinic Melur patients prefer. Personal care on Alagar Kovil Road. Book via WhatsApp +91 80988 59590.",
+    "Baskaran Clinic — the famous local clinic Melur patients prefer. Personal care on Alagar Kovil Road. Call +91 80988 59590.",
   keywords: [
     "Baskaran Clinic Melur",
     "best clinic Melur",

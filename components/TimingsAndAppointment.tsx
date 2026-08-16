@@ -2,8 +2,8 @@
 
 import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
-import { Send } from "lucide-react";
-import { CLINIC, TIMINGS, whatsappUrl } from "@/lib/clinic";
+import { Phone, Send } from "lucide-react";
+import { CLINIC, TEL_HREF, TIMINGS, smsUrl } from "@/lib/clinic";
 
 type Session = "Morning" | "Evening";
 
@@ -41,7 +41,8 @@ export default function TimingsAndAppointment() {
       `Reason for Visit: ${form.reason.trim()}`,
     ].join("\n");
 
-    window.open(whatsappUrl(message), "_blank", "noopener,noreferrer");
+    // Native SMS — this clinic number is not on WhatsApp
+    window.location.href = smsUrl(message);
   };
 
   return (
@@ -99,7 +100,8 @@ export default function TimingsAndAppointment() {
               </div>
             </dl>
             <p className="mt-8 text-sm leading-relaxed text-teal-100/90">
-              Prefer WhatsApp booking for faster confirmation during busy hours.
+              Prefer calling {CLINIC.phoneLocal} during OP hours for faster
+              confirmation.
             </p>
           </motion.div>
 
@@ -115,7 +117,8 @@ export default function TimingsAndAppointment() {
               Request Appointment
             </h3>
             <p className="mt-2 text-sm text-slate-600">
-              Submit to open WhatsApp with your details ready to send.
+              Fill the form to open a phone SMS with your details — or call the
+              clinic directly. (This number is not on WhatsApp.)
             </p>
 
             <div className="mt-6 space-y-4">
@@ -203,13 +206,22 @@ export default function TimingsAndAppointment() {
               </label>
             </div>
 
-            <button
-              type="submit"
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-emerald-500"
-            >
-              <Send className="h-4 w-4" aria-hidden />
-              Send via WhatsApp
-            </button>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <a
+                href={TEL_HREF}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-950 px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-slate-900"
+              >
+                <Phone className="h-4 w-4" aria-hidden />
+                Call clinic
+              </a>
+              <button
+                type="submit"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-emerald-500"
+              >
+                <Send className="h-4 w-4" aria-hidden />
+                Send SMS request
+              </button>
+            </div>
           </motion.form>
         </div>
       </div>
